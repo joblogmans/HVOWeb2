@@ -4,7 +4,17 @@ This project was inspired by the fact that our previous server died and it was a
 
 ## Development
 
-Make sure you have Docker desktop installed. Copy this repository and run `sudo docker compose up` in this folder. This should start the development server at `http://0.0.0.0:8000/`. You can now start developing.
+Make sure you have Docker desktop installed. Copy this repository and run `docker compose up` in this folder. This should start the development server at `http://0.0.0.0:8000/`. You can now start developing. If this fails, first run `docker compose build`. If you get `permission denied` errors when executing Docker, check the docs on how to execute without `sudo`. Building the container with `sudo` will result in further permission issues down the line! Sometimes the database folder becomes owned by a different user and this also causes permission issues. Execute `sudo chown -R <your-user> data` to recursively retrieve all its permissions.
+
+Once in the container, check if Django requires migrations. If so, execute `python manage.py migrate`. Otherwise some things might get wonky.
+
+Add a superuser by doing `python manage.py createsuperuser`. Then by going to [127.0.0.1:8000/admin](127.0.0.1:8000/admin) you can login and create regular users.
+
+The container already contains some VSCode extensions. If you wish to include a new one by default by submitting it in a PR, please add some text on why you want it.
+
+### Branches
+
+Usually you would create a branch per issue with the format `<type-of-issue>/<issue #>-short-description`. Check older branches if you're unsure. Preferably one issue per PR, but this is not strict.
 
 ## Production
 
