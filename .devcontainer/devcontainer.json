@@ -6,6 +6,8 @@
     "shutdownAction": "stopCompose",
     "extensions": [
       "batisteo.vscode-django",
-      "yzhang.markdown-all-in-one"
-    ]
+      "yzhang.markdown-all-in-one",
+      "ms-python.python"
+    ],
+    "forwardPorts": [5678, 8000]
   }
