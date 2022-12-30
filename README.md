@@ -8,6 +8,8 @@ Make sure you have Docker desktop installed. Copy this repository and run `docke
 
 Once in the container, check if Django requires migrations. If so, execute `python manage.py migrate`. Otherwise some things might get wonky.
 
+Add a superuser by doing `python manage.py createsuperuser`. Then by going to [127.0.0.1:8000/admin](127.0.0.1:8000/admin) you can login and create regular users.
+
 The container already contains some VSCode extensions. If you wish to include a new one by default by submitting it in a PR, please add some text on why you want it.
 
 ### Branches
