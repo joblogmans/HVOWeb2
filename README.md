@@ -4,7 +4,7 @@ This project was inspired by the fact that our previous server died and it was a
 
 ## Development
 
-Make sure you have Docker desktop installed. Copy this repository and run `docker compose up` in this folder. This should start the development server at `http://0.0.0.0:8000/`. You can now start developing. If this fails, first run `docker compose build`. If you get `permission denied` errors when executing Docker, check the docs on how to execute without `sudo`. Building the container with `sudo` will result in further permission issues down the line!
+Make sure you have Docker desktop installed. Copy this repository and run `docker compose up` in this folder. This should start the development server at `http://0.0.0.0:8000/`. You can now start developing. If this fails, first run `docker compose build`. If you get `permission denied` errors when executing Docker, check the docs on how to execute without `sudo`. Building the container with `sudo` will result in further permission issues down the line! Sometimes the database folder becomes owned by a different user and this also causes permission issues. Execute `sudo chown -R <your-user> data` to recursively retrieve all its permissions.
 
 The container already contains some VSCode extensions. If you wish to include a new one by default by submitting it in a PR, please add some text on why you want it.
 
